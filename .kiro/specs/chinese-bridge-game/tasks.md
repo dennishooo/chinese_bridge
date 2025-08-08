@@ -26,9 +26,9 @@
     - Write unit tests for all Flutter domain entities
     - _Requirements: 3.1, 13.2_
 
-- [ ] 3. Database Layer Implementation
+- [x] 3. Database Layer Implementation
 
-  - [ ] 3.1 Set up GORM models and database connection
+  - [x] 3.1 Set up GORM models and database connection
 
     - Configure PostgreSQL connection with GORM
     - Implement User, Room, Game, and statistics GORM models
@@ -37,7 +37,7 @@
     - Write integration tests for database operations
     - _Requirements: 16.1, 18.1_
 
-  - [ ] 3.2 Implement Redis caching layer
+  - [x] 3.2 Implement Redis caching layer
     - Set up Redis connection and configuration
     - Implement caching for user sessions, room states, and game states
     - Create cache invalidation strategies with TTL policies
