@@ -8,9 +8,9 @@
   - Set up basic Kubernetes manifests for local development
   - _Requirements: 14.3, 15.1, 17.1_
 
-- [ ] 2. Core Domain Models and Entities
+- [x] 2. Core Domain Models and Entities
 
-  - [ ] 2.1 Implement Go domain entities for Chinese Bridge game
+  - [x] 2.1 Implement Go domain entities for Chinese Bridge game
 
     - Create Card struct with suit, rank, deck ID, and joker type fields
     - Implement GameState struct with all game phases and player data
@@ -19,7 +19,7 @@
     - Write comprehensive unit tests for all domain entities
     - _Requirements: 3.1, 7.1, 8.1_
 
-  - [ ] 2.2 Implement Flutter domain entities
+  - [x] 2.2 Implement Flutter domain entities
     - Create Dart models for Card, Game, Room, User entities
     - Implement Equatable for proper state comparison
     - Add JSON serialization/deserialization methods
