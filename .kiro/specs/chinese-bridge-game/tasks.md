@@ -44,9 +44,9 @@
     - Write unit tests for caching operations
     - _Requirements: 17.1, 17.5_
 
-- [ ] 4. Authentication Service Implementation
+- [x] 4. Authentication Service Implementation
 
-  - [ ] 4.1 Implement Google OAuth backend service
+  - [x] 4.1 Implement Google OAuth backend service
 
     - Set up Google OAuth2 configuration and credentials
     - Create JWT token generation and validation middleware
@@ -55,7 +55,7 @@
     - Write unit and integration tests for authentication flows
     - _Requirements: 1.1, 1.3, 15.1, 21.2_
 
-  - [ ] 4.2 Implement Flutter authentication module
+  - [x] 4.2 Implement Flutter authentication module
     - Set up Google Sign-In plugin and configuration
     - Create AuthBloc with proper state management
     - Implement AuthRepository with remote and local data sources

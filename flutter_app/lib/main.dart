@@ -22,7 +22,7 @@ class ChineseBridgeApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<AuthBloc>(
-          create: (context) => getIt<AuthBloc>()..add(AuthCheckRequested()),
+          create: (context) => getIt<AuthBloc>()..add(AuthStarted()),
         ),
       ],
       child: MaterialApp(
@@ -31,16 +31,31 @@ class ChineseBridgeApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           useMaterial3: true,
         ),
-        home: BlocBuilder<AuthBloc, AuthState>(
-          builder: (context, state) {
-            if (state is AuthAuthenticated) {
-              return const GameLobbyPage();
-            } else {
-              return const LoginPage();
-            }
-          },
-        ),
+        home: const AuthWrapper(),
       ),
+    );
+  }
+}
+
+class AuthWrapper extends StatelessWidget {
+  const AuthWrapper({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<AuthBloc, AuthState>(
+      builder: (context, state) {
+        if (state is AuthLoading) {
+          return const Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
+        } else if (state is AuthAuthenticated) {
+          return const GameLobbyPage();
+        } else {
+          return const LoginPage();
+        }
+      },
     );
   }
 }

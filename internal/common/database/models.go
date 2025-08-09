@@ -8,7 +8,7 @@ import (
 
 // User model with GORM tags
 type User struct {
-	ID        string    `json:"id" gorm:"type:varchar(36);primary_key"`
+	ID        string    `json:"id" gorm:"type:varchar(36);primaryKey"`
 	GoogleID  string    `json:"google_id" gorm:"uniqueIndex;not null"`
 	Email     string    `json:"email" gorm:"uniqueIndex;not null"`
 	Name      string    `json:"name" gorm:"not null"`
@@ -25,7 +25,7 @@ type User struct {
 
 // UserStats model for tracking player statistics
 type UserStats struct {
-	UserID          string  `json:"user_id" gorm:"type:varchar(36);primary_key"`
+	UserID          string  `json:"user_id" gorm:"type:varchar(36);primaryKey"`
 	GamesPlayed     int     `json:"games_played" gorm:"default:0"`
 	GamesWon        int     `json:"games_won" gorm:"default:0"`
 	GamesAsDeclarer int     `json:"games_as_declarer" gorm:"default:0"`
@@ -41,7 +41,7 @@ type UserStats struct {
 
 // Room model for game rooms
 type Room struct {
-	ID             string    `json:"id" gorm:"type:varchar(36);primary_key"`
+	ID             string    `json:"id" gorm:"type:varchar(36);primaryKey"`
 	Name           string    `json:"name" gorm:"not null"`
 	HostID         string    `json:"host_id" gorm:"type:varchar(36);not null"`
 	MaxPlayers     int       `json:"max_players" gorm:"default:4"`
@@ -70,7 +70,7 @@ type RoomParticipant struct {
 
 // Game model for individual game instances
 type Game struct {
-	ID          string     `json:"id" gorm:"type:varchar(36);primary_key"`
+	ID          string     `json:"id" gorm:"type:varchar(36);primaryKey"`
 	RoomID      string     `json:"room_id" gorm:"type:varchar(36);not null"`
 	DeclarerID  *string    `json:"declarer_id" gorm:"type:varchar(36)"`
 	TrumpSuit   *string    `json:"trump_suit"`
@@ -104,7 +104,7 @@ type GameParticipant struct {
 
 // Session model for user authentication sessions
 type Session struct {
-	ID        string    `json:"id" gorm:"type:varchar(36);primary_key"`
+	ID        string    `json:"id" gorm:"type:varchar(36);primaryKey"`
 	UserID    string    `json:"user_id" gorm:"type:varchar(36);not null;index"`
 	Token     string    `json:"token" gorm:"not null;index"`
 	ExpiresAt time.Time `json:"expires_at" gorm:"not null"`

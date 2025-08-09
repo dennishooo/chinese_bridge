@@ -1,24 +1,29 @@
 class ApiConstants {
   static const String baseUrl = 'http://localhost:8080/api/v1';
-  static const String authBaseUrl = 'http://localhost:8080/api/v1/auth';
-  static const String userBaseUrl = 'http://localhost:8081/api/v1/users';
-  static const String gameBaseUrl = 'http://localhost:8082/api/v1/games';
-  static const String wsUrl = 'ws://localhost:8083/ws';
 
   // Auth endpoints
-  static const String googleLogin = '/google';
-  static const String refreshToken = '/refresh';
-  static const String logout = '/logout';
+  static const String authGoogle = '/auth/google';
+  static const String authGoogleUrl = '/auth/google/url';
+  static const String authRefresh = '/auth/refresh';
+  static const String authLogout = '/auth/logout';
 
   // User endpoints
-  static const String profile = '/profile';
-  static const String stats = '/stats';
-  static const String history = '/history';
+  static const String userProfile = '/users/profile';
+  static const String userStats = '/users/stats';
+  static const String userHistory = '/users/history';
+
+  // Room endpoints
+  static const String rooms = '/rooms';
+  static const String roomJoin = '/rooms/{id}/join';
+  static const String roomLeave = '/rooms/{id}/leave';
 
   // Game endpoints
-  static const String startGame = '/start';
-  static const String placeBid = '/bid';
-  static const String declareTrump = '/trump';
-  static const String exchangeKitty = '/kitty';
-  static const String playCards = '/play';
+  static const String gameStart = '/game/{roomId}/start';
+  static const String gameBid = '/game/{gameId}/bid';
+  static const String gameTrump = '/game/{gameId}/trump';
+  static const String gameKitty = '/game/{gameId}/kitty';
+  static const String gamePlay = '/game/{gameId}/play';
+
+  // WebSocket endpoints
+  static const String wsUrl = 'ws://localhost:8080/ws';
 }

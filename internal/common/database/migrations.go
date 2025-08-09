@@ -215,3 +215,9 @@ func (m *MigrationManager) DropAllTables(ctx context.Context) error {
 	log.Println("All tables dropped successfully")
 	return nil
 }
+
+// RunMigrations is a convenience function to run migrations
+func RunMigrations(db *gorm.DB) error {
+	manager := NewMigrationManager(db)
+	return manager.RunMigrations(context.Background())
+}
